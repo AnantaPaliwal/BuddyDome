@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %} Blogs {% endblock %}
+
+{% block headd %}
+
+{% endblock %}
+
+{% block image_block %}
+<header class="info-header" style="height:100%;">
+  <div id="page-intro" class="container-fluid d-flex align-items-center justify-content-center ">
+
+    <div class="row d-flex justify-content-center text-center">
+      <div class="col-md-10 text-white">
+        <!-- heading -->
+        <h2 class="display-4 font-weight-bold  p-5 " style="color:#ff5722;" > Blogs </h2>
+        <div class="row d-flex justify-content-center text-center">
+            <ul class="breadcrumb">
+                <h3 class="white-text my-4">Blog posts submitted by the users of BuddyDome. Our hearty thanks to the contributors who have created these blogs and shared them with the community in the spirit of free learning and knowledge sharing.</h3>
+              </ul>
+            </div>
+          <div>
+              <h4>Are you interested in your blog listed here? Do share your blog Submit your Blog Now!</h4><br>
+<a href="{% url 'testa:createblog' %}"><button type="button" class="btn btn-success btn-lg btn-bloc" ><b>Submit blog </b></button> </a>
+
+          </div>
+        </div>
+    </div>
+  </div>
+</header>
+{%endblock%}
+
+
+{% block cont %}
+
+<section class="cards-wrapper">
+
+  <div class="card-grid-space">
+      <a href="{{rel}}" style="text-decoration: none;">
+    <i class="card cardb" >
+      <div>
+        <h1>{{tit}}</h1>
+        <p style="font-size:12px;">{{crp}}</p>
+
+        <div class="tags">
+          <div class="tag"><em>{{af}}</em></div>
+        </div>
+      </div>
+    </i>
+          </a>
+  </div>
+
+
+{% endfor %}
+
+</section>
+
+{%endblock%}
+
